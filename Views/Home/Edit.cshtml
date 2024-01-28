@@ -1,0 +1,18 @@
+@model ToDo
+<h2>Edit Task</h2>
+<form asp-action="Edit" asp-route-id="@Model.Id" method="post">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+    <input type="hidden" id="StatusId" name="StatusId" asp-for="StatusId"/>
+     <input type="hidden" id="status" name="status" asp-for="status"/>
+ <input type="hidden" id="Overdue" name="Overdue" asp-for="Overdue"/>
+     <input type="hidden" id="DueDate" name="DueDate" asp-for="DueDate"/>
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+    <a asp-action="Index" class="btn btn-primary">Cancel</a>
+</form>
